@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>It’s a Date 💖</title>
+
+  <style>
+    :root{
+      --pink:#ff4d88;
+      --bg1:#fff0f6;
+      --bg2:#ffe3ee;
+      --card:#ffffffcc;
+      --shadow: 0 16px 40px rgba(0,0,0,.12);
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(1100px 700px at 30% 10%, var(--bg2), transparent 60%),
+        radial-gradient(900px 650px at 80% 30%, #ffd1e3, transparent 55%),
+        linear-gradient(135deg, var(--bg1), #fff);
+      display:grid;
+      place-items:center;
+      padding: 28px 16px;
+    }
+
+    .wrap{
+      width:min(980px, 94vw);
+      display:grid;
+      gap:20px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 2px solid rgba(255,77,136,.22);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      padding: 22px 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    h1{
+      margin: 6px 0 8px;
+      font-size: clamp(30px, 4.5vw, 54px);
+      color:#8a0030;
+      text-align:center;
+    }
+
+    .sub{
+      text-align:center;
+      color:#7a1a3a;
+      font-size: 16.5px;
+      line-height:1.5;
+      max-width: 60ch;
+      margin: 0 auto;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:22px;
+      align-items:start; /* KEY CHANGE */
+    }
+
+    @media (max-width: 860px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    /* NOTE + INVITE */
+    .note h2,
+    .invite h2,
+    .collage h2{
+      margin: 0 0 10px;
+      color:#8a0030;
+      font-size: 22px;
+    }
+
+    textarea{
+      width:100%;
+      min-height: 180px;
+      resize: vertical;
+      border-radius: 18px;
+      border: 1px solid rgba(0,0,0,.10);
+      padding: 14px;
+      font-size: 16px;
+      line-height:1.5;
+      outline:none;
+    }
+
+    .hint{
+      margin-top:10px;
+      font-size: 13px;
+      color: rgba(90,10,40,.7);
+    }
+
+    .left-stack{
+      display:grid;
+      gap:20px;
+    }
+
+    .invite{
+      display:grid;
+      gap:14px;
+    }
+
+    .invite-item{
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap:12px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(0,0,0,.08);
+    }
+
+    .label{
+      font-weight:800;
+      color:#8a0030;
+    }
+
+    .value{
+      color:#5e1631;
+    }
+
+    .rsvp{
+      text-align:center;
+      margin-top: 8px;
+      font-weight:700;
+      color:#8a0030;
+    }
+
+    /* COLLAGE */
+    .collage{
+      display:grid;
+      gap:14px;
+      align-content:start; /* KEY CHANGE */
+    }
+
+    .photos{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:12px;
+    }
+
+    .photo{
+      aspect-ratio: 1/1;
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(0,0,0,.10);
+      background: linear-gradient(135deg, rgba(255,77,136,.25), rgba(255,255,255,.9));
+      display:grid;
+      place-items:center;
+      color: rgba(90,10,40,.75);
+      font-weight: 800;
+      text-align:center;
+      padding: 8px;
+    }
+
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+
+    .back{
+      text-align:center;
+      margin-top: 6px;
+    }
+
+    .back a{
+      text-decoration:none;
+      padding: 12px 16px;
+      border-radius: 16px;
+      font-weight: 800;
+      color: white;
+      background: var(--pink);
+      box-shadow: 0 14px 24px rgba(0,0,0,.14);
+      display:inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="card">
+      <h1>She/He/They Said YES 💖</h1>
+      <p class="sub">
+        Congratulations 🎉 You have officially unlocked a very special date.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <!-- LEFT -->
+      <div class="left-stack">
+        <div class="card note">
+          <h2>My note to you 💌</h2>
+          <textarea placeholder="Write your note here…
+Example:
+Happy Valentine’s Day ❤️
+I love you so much and I’m so excited to spend this day with you."></textarea>
+          <div class="hint">
+            Tip: I can turn this into a non-editable handwritten-style note later.
+          </div>
+        </div>
+
+        <div class="card invite">
+          <h2>✨ Official Date Invitation ✨</h2>
+
+          <div class="invite-item">
+            <div class="label">What:</div>
+            <div class="value">Valentine’s Day Date 💕</div>
+          </div>
+
+          <div class="invite-item">
+            <div class="label">When:</div>
+            <div class="value">Friday, February 14th at 7:00 PM</div>
+          </div>
+
+          <div class="invite-item">
+            <div class="label">Where:</div>
+            <div class="value">Dinner + quality time (location TBD 👀)</div>
+          </div>
+
+          <div class="invite-item">
+            <div class="label">Dress:</div>
+            <div class="value">Whatever makes you feel amazing ✨</div>
+          </div>
+
+          <div class="invite-item">
+            <div class="label">Plan:</div>
+            <div class="value">Food 🍽️ · Laughing 😂 · Cuddles 🧸 · Memories 💖</div>
+          </div>
+
+          <div class="rsvp">RSVP: Already accepted 💘</div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="card collage">
+        <h2>Us 🥰</h2>
+        <div class="photos">
+          <div class="photo"><span>Photo 1</span></div>
+          <div class="photo"><span>Photo 2</span></div>
+          <div class="photo"><span>Photo 3</span></div>
+          <div class="photo"><span>Photo 4</span></div>
+        </div>
+        <div class="hint">
+          Add <b>1.jpg – 4.jpg</b> to the <b>/images</b> folder to auto-load them.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="back">
+      <a href="index.html">⬅ Back</a>
+    </div>
+
+  </div>
+
+  <script>
+    const slots = document.querySelectorAll(".photo");
+    const names = ["1.jpg","2.jpg","3.jpg","4.jpg"];
+    slots.forEach((slot, i) => {
+      const img = new Image();
+      img.src = `images/${names[i]}`;
+      img.onload = () => {
+        slot.innerHTML = "";
+        slot.appendChild(img);
+      };
+    });
+  </script>
+</body>
+</html>
