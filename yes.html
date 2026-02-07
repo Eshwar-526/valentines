@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>It’s a Date 💖</title>
+  <title>YAYYYYY YOU SAID YES 💖</title>
+
+  <!-- Handwritten font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -51,27 +56,17 @@
       text-align:center;
     }
 
-    .sub{
-      text-align:center;
-      color:#7a1a3a;
-      font-size: 16.5px;
-      line-height:1.5;
-      max-width: 60ch;
-      margin: 0 auto;
-    }
-
     .grid{
       display:grid;
       grid-template-columns: 1.1fr .9fr;
       gap:22px;
-      align-items:start; /* KEY CHANGE */
+      align-items:start;
     }
 
     @media (max-width: 860px){
       .grid{ grid-template-columns: 1fr; }
     }
 
-    /* NOTE + INVITE */
     .note h2,
     .invite h2,
     .collage h2{
@@ -80,29 +75,69 @@
       font-size: 22px;
     }
 
-    textarea{
-      width:100%;
-      min-height: 180px;
-      resize: vertical;
-      border-radius: 18px;
-      border: 1px solid rgba(0,0,0,.10);
-      padding: 14px;
-      font-size: 16px;
-      line-height:1.5;
-      outline:none;
-    }
-
-    .hint{
-      margin-top:10px;
-      font-size: 13px;
-      color: rgba(90,10,40,.7);
-    }
-
     .left-stack{
       display:grid;
       gap:20px;
     }
 
+    /* ===== Handwritten Letter ===== */
+    .letter{
+      position:relative;
+      background: rgba(255,255,255,.86);
+      border: 1px solid rgba(0,0,0,.10);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.45),
+        0 10px 18px rgba(0,0,0,.08);
+      overflow:hidden;
+    }
+
+    .letter::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          rgba(255,77,136,.08) 0px,
+          rgba(255,77,136,.08) 1px,
+          transparent 1px,
+          transparent 28px
+        );
+      opacity:.25;
+      pointer-events:none;
+    }
+
+    .letter::after{
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:22px;
+      width:2px;
+      background: rgba(255,77,136,.18);
+      pointer-events:none;
+    }
+
+    .handwritten{
+      position:relative;
+      font-family: "Dancing Script", "Comic Sans MS", cursive;
+      color:#4b1430;
+      font-size: 26px;
+      line-height: 1.25;
+      padding-left: 18px;
+      white-space: pre-wrap;
+    }
+
+    .signature{
+      margin-top: 14px;
+      text-align:right;
+      font-weight:700;
+      color:#6b1436;
+    }
+
+    /* ===== Invitation ===== */
     .invite{
       display:grid;
       gap:14px;
@@ -134,38 +169,38 @@
       color:#8a0030;
     }
 
-    /* COLLAGE */
+    /* ===== Slideshow Collage ===== */
     .collage{
       display:grid;
       gap:14px;
-      align-content:start; /* KEY CHANGE */
+      align-content:start;
+      text-align:center;
     }
 
-    .photos{
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap:12px;
-    }
-
-    .photo{
-      aspect-ratio: 1/1;
+    .slideshow{
+      width:100%;
+      max-width:420px;
+      margin: 0 auto;
+      aspect-ratio: 1 / 1;
       border-radius: 18px;
       overflow:hidden;
       border: 1px solid rgba(0,0,0,.10);
       background: linear-gradient(135deg, rgba(255,77,136,.25), rgba(255,255,255,.9));
-      display:grid;
-      place-items:center;
-      color: rgba(90,10,40,.75);
-      font-weight: 800;
-      text-align:center;
-      padding: 8px;
+      box-shadow: 0 10px 18px rgba(0,0,0,.08);
+      position:relative;
     }
 
-    .photo img{
+    .slideshow img{
       width:100%;
       height:100%;
-      object-fit: cover;
+      object-fit:cover;
       display:block;
+      opacity:1;
+      transition: opacity .6s ease;
+    }
+
+    .fade-out{
+      opacity:0;
     }
 
     .back{
@@ -190,24 +225,28 @@
   <div class="wrap">
 
     <div class="card">
-      <h1>She/He/They Said YES 💖</h1>
-      <p class="sub">
-        Congratulations 🎉 You have officially unlocked a very special date.
-      </p>
+      <h1>YAYYYYY YOU SAID YESSSS 💖</h1>
     </div>
 
     <div class="grid">
 
-      <!-- LEFT -->
+      <!-- LEFT COLUMN -->
       <div class="left-stack">
+
         <div class="card note">
           <h2>My note to you 💌</h2>
-          <textarea placeholder="Write your note here…
-Example:
-Happy Valentine’s Day ❤️
-I love you so much and I’m so excited to spend this day with you."></textarea>
-          <div class="hint">
-            Tip: I can turn this into a non-editable handwritten-style note later.
+
+          <div class="letter">
+            <div class="handwritten">
+Happy Valentine’s Day Mahi!
+
+I love you so much, and I’m so grateful that I can call you mine. You make me feel so complete and happy, and every thought of you makes my heart warm.
+
+Every time I see you, a smile comes to my face, whether I’m sad, mad, upset, or happy. You are truly my best friend, and I’m so glad I can spend this Valentine’s with you.
+
+I love you so much. Mwah 💖
+            </div>
+            <div class="handwritten signature">— Eshwar</div>
           </div>
         </div>
 
@@ -221,12 +260,12 @@ I love you so much and I’m so excited to spend this day with you."></textarea>
 
           <div class="invite-item">
             <div class="label">When:</div>
-            <div class="value">Friday, February 14th at 7:00 PM</div>
+            <div class="value">Sunday, February 15th — whenever you wake up</div>
           </div>
 
           <div class="invite-item">
             <div class="label">Where:</div>
-            <div class="value">Dinner + quality time (location TBD 👀)</div>
+            <div class="value">FaceTime</div>
           </div>
 
           <div class="invite-item">
@@ -236,25 +275,21 @@ I love you so much and I’m so excited to spend this day with you."></textarea>
 
           <div class="invite-item">
             <div class="label">Plan:</div>
-            <div class="value">Food 🍽️ · Laughing 😂 · Cuddles 🧸 · Memories 💖</div>
+            <div class="value">Yap 💬💘</div>
           </div>
 
           <div class="rsvp">RSVP: Already accepted 💘</div>
         </div>
       </div>
 
-      <!-- RIGHT -->
+      <!-- RIGHT COLUMN -->
       <div class="card collage">
-        <h2>Us 🥰</h2>
-        <div class="photos">
-          <div class="photo"><span>Photo 1</span></div>
-          <div class="photo"><span>Photo 2</span></div>
-          <div class="photo"><span>Photo 3</span></div>
-          <div class="photo"><span>Photo 4</span></div>
+        <h2>Collage Of Us 🥰</h2>
+
+        <div class="slideshow">
+          <img id="slideImg" alt="Us">
         </div>
-        <div class="hint">
-          Add <b>1.jpg – 4.jpg</b> to the <b>/images</b> folder to auto-load them.
-        </div>
+
       </div>
 
     </div>
@@ -266,16 +301,21 @@ I love you so much and I’m so excited to spend this day with you."></textarea>
   </div>
 
   <script>
-    const slots = document.querySelectorAll(".photo");
-    const names = ["1.jpg","2.jpg","3.jpg","4.jpg"];
-    slots.forEach((slot, i) => {
-      const img = new Image();
-      img.src = `images/${names[i]}`;
-      img.onload = () => {
-        slot.innerHTML = "";
-        slot.appendChild(img);
-      };
-    });
+    const slides = ["1.JPG","2.JPG","3.JPG","4.JPG","5.JPG","6.JPG","7.JPG","8.JPG","9.JPG","10.JPG"].map(n => `images/${n}`);
+    const img = document.getElementById("slideImg");
+    let idx = 0;
+
+    slides.forEach(src => { const i = new Image(); i.src = src; });
+    img.src = slides[idx];
+
+    setInterval(() => {
+      img.classList.add("fade-out");
+      setTimeout(() => {
+        idx = (idx + 1) % slides.length;
+        img.src = slides[idx];
+        img.classList.remove("fade-out");
+      }, 600);
+    }, 5000);
   </script>
 </body>
 </html>
